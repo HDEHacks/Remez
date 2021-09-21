@@ -1,34 +1,32 @@
 module MyGame.Map (
-  Direction,
-  Item,
-  Person,
-  Room,
+  initialRoom, initialInventory,
   den, veranda
 ) where
 
-data Direction = North | South | East | West deriving Show
+import MyGame.Entities (
+  Direction(..),
+  Item,
+  Person,
+  Room(..)
+ )
+ 
+initialRoom :: Room
+initialRoom = den
 
-data Item = Book
+initialInventory :: [Item]
+initialInventory = []
 
-data Person = Joe
-
-data Room = Room {
- name :: String,
- description :: String,
- exits :: [(Direction, Room)],
- items :: [Item],
- triggers :: [Item],
- people :: [Person]
-}
-
+veranda :: Room
 veranda = Room {
- name = "Veranda",
+ name = "The Veranda",
  description = "A veranda overlooks a balcony. To the West, a door opens into a house.",
  exits = [(West, den)],
  items = [], triggers = [], people = []
 }
+
+den :: Room
 den = Room {
- name = "Den",
+ name = "The Den",
  description = "A small den keeps you warm from the elements. To the East, a door opens to a veranda.",
  exits = [(East, veranda)],
  items = [], triggers = [], people = []

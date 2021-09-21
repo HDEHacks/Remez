@@ -1,10 +1,8 @@
 cabal-version: 1.12
 
--- This file has been generated from package.yaml by hpack version 0.33.0.
+-- This file has been generated from package.yaml by hpack version 0.34.4.
 --
 -- see: https://github.com/sol/hpack
---
--- hash: a37ae205a549a26a3a56c438623c17366b895b833f495d9b4f188c2bde94a1b0
 
 name:           my-game
 version:        0.1.0.0
@@ -19,7 +17,6 @@ license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
     README.md
-    ChangeLog.md
 
 source-repository head
   type: git
@@ -27,7 +24,8 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      MyGame.Engine
+      MyGame.Entities
       MyGame.Map
       MyGame.Parsing
   other-modules:
@@ -35,7 +33,9 @@ library
   hs-source-dirs:
       src
   build-depends:
-      base >=4.7 && <5
+      assoc-list ==0.1.0.1
+    , base >=4.7 && <5
+    , mtl
   default-language: Haskell2010
 
 executable my-game-exe
@@ -46,7 +46,9 @@ executable my-game-exe
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      assoc-list ==0.1.0.1
+    , base >=4.7 && <5
+    , mtl
     , my-game
   default-language: Haskell2010
 
@@ -59,6 +61,8 @@ test-suite my-game-test
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
   build-depends:
-      base >=4.7 && <5
+      assoc-list ==0.1.0.1
+    , base >=4.7 && <5
+    , mtl
     , my-game
   default-language: Haskell2010

@@ -1,5 +1,5 @@
 module MyGame.Parsing (
-  Command,
+  Command(..),
   tryGetCommand,
   retryWith
 ) where
