@@ -1,4 +1,4 @@
-module MyGame.Entities (
+module Remez.Entities (
   Direction(..),
   Item,
   Person,

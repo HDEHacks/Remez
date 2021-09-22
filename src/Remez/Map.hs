@@ -1,9 +1,9 @@
-module MyGame.Map (
+module Remez.Map (
   initialRoom, initialInventory,
   den, veranda
 ) where
 
-import MyGame.Entities (
+import Remez.Entities (
   Direction(..),
   Item,
   Person,

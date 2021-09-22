@@ -1,15 +1,14 @@
 module Main where
 
-import MyGame.Parsing (
+import Remez.Parsing (
   Command,
   tryGetCommand,
   retryWith
  )
 
-import MyGame.Map ( initialRoom, initialInventory )
-import MyGame.Engine ( initialize, process, GameState )
+import Remez.Map ( initialRoom, initialInventory )
+import Remez.Engine ( initialize, process, GameState )
 
-import Control.Monad (mapM_)
 import Control.Monad.State (execStateT)
 
 initGame :: IO GameState

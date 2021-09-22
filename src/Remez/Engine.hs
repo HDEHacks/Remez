@@ -1,26 +1,24 @@
 {-# LANGUAGE NamedFieldPuns #-}
 
-module MyGame.Engine (
+module Remez.Engine (
   initialize,
   process,
   GameState
  ) where
 
-import MyGame.Entities (
+import Remez.Entities (
   Direction(..),
   Item,
   Person,
   Room(..)
  )
 
-import MyGame.Parsing (
+import Remez.Parsing (
   Command(..)
  )
 
 import Control.Monad.State (StateT, lift, gets, modify)
-
 import Data.Functor.Contravariant (Predicate(..))
-
 import Data.AssocList.List.Predicate as ALP (lookupFirst)
 
 data GameState = GameState {
@@ -40,7 +38,6 @@ showRoom :: Room -> IO ()
 showRoom r = do
   putStrLn $ "You are in " ++ (name r) ++ "."
   putStrLn $ description r
-
 
 type GameStep a = StateT GameState IO a
 

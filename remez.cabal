@@ -4,15 +4,15 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 
-name:           my-game
+name:           remez
 version:        0.1.0.0
-description:    Please see the README on GitHub at <https://github.com/githubuser/my-game#readme>
-homepage:       https://github.com/githubuser/my-game#readme
-bug-reports:    https://github.com/githubuser/my-game/issues
-author:         Author name here
-maintainer:     example@example.com
-copyright:      2021 Author name here
-license:        BSD3
+description:    Please see the README on GitHub at <https://github.com/hdehacks/remez#readme>
+homepage:       https://github.com/hdehacks/remez#readme
+bug-reports:    https://github.com/hdehacks/remez/issues
+author:         Joshua Maravelias
+maintainer:     maravelias@protonmail.com
+copyright:      2021 Joshua Maravelias
+license:        GPLv3
 license-file:   LICENSE
 build-type:     Simple
 extra-source-files:
@@ -20,16 +20,16 @@ extra-source-files:
 
 source-repository head
   type: git
-  location: https://github.com/githubuser/my-game
+  location: https://github.com/hdehacks/remez
 
 library
   exposed-modules:
-      MyGame.Engine
-      MyGame.Entities
-      MyGame.Map
-      MyGame.Parsing
+      Remez.Engine
+      Remez.Entities
+      Remez.Map
+      Remez.Parsing
   other-modules:
-      Paths_my_game
+      Paths_remez
   hs-source-dirs:
       src
   build-depends:
@@ -41,7 +41,7 @@ library
 executable my-game-exe
   main-is: Main.hs
   other-modules:
-      Paths_my_game
+      Paths_remez
   hs-source-dirs:
       app
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -49,14 +49,14 @@ executable my-game-exe
       assoc-list ==0.1.0.1
     , base >=4.7 && <5
     , mtl
-    , my-game
+    , remez
   default-language: Haskell2010
 
 test-suite my-game-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
-      Paths_my_game
+      Paths_remez
   hs-source-dirs:
       test
   ghc-options: -threaded -rtsopts -with-rtsopts=-N
@@ -64,5 +64,5 @@ test-suite my-game-test
       assoc-list ==0.1.0.1
     , base >=4.7 && <5
     , mtl
-    , my-game
+    , remez
   default-language: Haskell2010

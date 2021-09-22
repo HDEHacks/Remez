@@ -1,4 +1,4 @@
-module MyGame.Parsing (
+module Remez.Parsing (
   Command(..),
   tryGetCommand,
   retryWith
